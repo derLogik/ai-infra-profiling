@@ -1,0 +1,160 @@
+{
+  "backend": "vllm",
+  "model": "qwen3-8b-awq",
+  "base_url": "http://127.0.0.1:8000",
+  "results": [
+    {
+      "concurrency": 1,
+      "repeats": 3,
+      "throughput_tok_s": 74.70094769724672,
+      "ttft_s": 0.02312681299997621,
+      "itl_s": 0.013302153102362296,
+      "e2e_s": 1.7134381070000018,
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 2,
+      "repeats": 3,
+      "throughput_tok_s": 146.60041209170132,
+      "ttft_s": 0.03054991350001046,
+      "itl_s": 0.013460372011810863,
+      "e2e_s": 1.74001715899999,
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 4,
+      "repeats": 3,
+      "throughput_tok_s": 282.7648240600712,
+      "ttft_s": 0.04897297349998553,
+      "itl_s": 0.01387644285826777,
+      "e2e_s": 1.8099893269999825,
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 8,
+      "repeats": 3,
+      "throughput_tok_s": 552.2628349173964,
+      "ttft_s": 0.06619589650000535,
+      "itl_s": 0.014053633570865965,
+      "e2e_s": 1.852830405499958,
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 1,
+      "repeats": 3,
+      "throughput_tok_s": 73.43824841795706,
+      "ttft_s": 0.024927735999995093,
+      "itl_s": 0.013572256290196011,
+      "e2e_s": 3.485871616000054,
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256
+    },
+    {
+      "concurrency": 2,
+      "repeats": 3,
+      "throughput_tok_s": 141.00338127843486,
+      "ttft_s": 0.03396510400000352,
+      "itl_s": 0.0140784898470587,
+      "e2e_s": 3.6241711705000057,
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256
+    },
+    {
+      "concurrency": 4,
+      "repeats": 3,
+      "throughput_tok_s": 268.1302904908111,
+      "ttft_s": 0.05254807400001482,
+      "itl_s": 0.014768054315686195,
+      "e2e_s": 3.8183957279999845,
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256
+    },
+    {
+      "concurrency": 8,
+      "repeats": 3,
+      "throughput_tok_s": 504.30558651137335,
+      "ttft_s": 0.07626583100000062,
+      "itl_s": 0.015598159570588138,
+      "e2e_s": 4.053684486000009,
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256
+    },
+    {
+      "concurrency": 1,
+      "repeats": 3,
+      "throughput_tok_s": 67.531947281581,
+      "ttft_s": 0.030326994999995804,
+      "itl_s": 0.014684351110236273,
+      "e2e_s": 1.8953522629999497,
+      "workload": "long",
+      "input_tokens": 2048,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 2,
+      "repeats": 3,
+      "throughput_tok_s": 127.24725391790068,
+      "ttft_s": 0.04244788649998554,
+      "itl_s": 0.01545046535826764,
+      "e2e_s": 2.0046569869999757,
+      "workload": "long",
+      "input_tokens": 2048,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 4,
+      "repeats": 3,
+      "throughput_tok_s": 223.49493000965217,
+      "ttft_s": 0.0693050389999712,
+      "itl_s": 0.017475835129921402,
+      "e2e_s": 2.2903057949999948,
+      "workload": "long",
+      "input_tokens": 2048,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 8,
+      "repeats": 3,
+      "throughput_tok_s": 380.75358098044956,
+      "ttft_s": 0.10434786099995108,
+      "itl_s": 0.02027962194094514,
+      "e2e_s": 2.679732964500033,
+      "workload": "long",
+      "input_tokens": 2048,
+      "output_tokens": 128
+    }
+  ],
+  "startup_s": 72.35,
+  "vram_gib": 6.98,
+  "server_args": [
+    "<HOME>/venvs/vllm/bin/vllm",
+    "serve",
+    "<HOME>/models/Qwen3-8B-AWQ",
+    "--served-model-name",
+    "qwen3-8b-awq",
+    "--port",
+    "8000",
+    "--host",
+    "127.0.0.1",
+    "--quantization",
+    "awq_marlin",
+    "--max-model-len",
+    "4096",
+    "--gpu-memory-utilization",
+    "0.85",
+    "--max-num-seqs",
+    "8"
+  ]
+}

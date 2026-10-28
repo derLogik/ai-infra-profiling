@@ -1,0 +1,171 @@
+{
+  "backend": "sglang",
+  "model": "qwen3-8b-awq",
+  "base_url": "http://127.0.0.1:8000",
+  "results": [
+    {
+      "concurrency": 1,
+      "repeats": 3,
+      "throughput_tok_s": 73.60850454259369,
+      "ttft_s": 0.09422529700000837,
+      "itl_s": 0.012956874692913364,
+      "e2e_s": 1.738844309000001,
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 2,
+      "repeats": 3,
+      "throughput_tok_s": 139.67844006489565,
+      "ttft_s": 0.15678458000000717,
+      "itl_s": 0.0131918408622047,
+      "e2e_s": 1.832517938499997,
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 4,
+      "repeats": 3,
+      "throughput_tok_s": 255.0725220027441,
+      "ttft_s": 0.2961081225000015,
+      "itl_s": 0.013458753511811012,
+      "e2e_s": 2.0066574814999996,
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 8,
+      "repeats": 3,
+      "throughput_tok_s": 436.50651995252866,
+      "ttft_s": 0.3755191429999982,
+      "itl_s": 0.01550841018503938,
+      "e2e_s": 2.344682044499997,
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 1,
+      "repeats": 3,
+      "throughput_tok_s": 70.14944987905325,
+      "ttft_s": 0.30165603900000804,
+      "itl_s": 0.013125944521568593,
+      "e2e_s": 3.64930378599999,
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256
+    },
+    {
+      "concurrency": 2,
+      "repeats": 3,
+      "throughput_tok_s": 125.083697575818,
+      "ttft_s": 0.6152282055000029,
+      "itl_s": 0.013614594196078442,
+      "e2e_s": 4.092947629000008,
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256
+    },
+    {
+      "concurrency": 4,
+      "repeats": 3,
+      "throughput_tok_s": 125.90350186469333,
+      "ttft_s": 0.8944095699999792,
+      "itl_s": 0.014018349188235362,
+      "e2e_s": 4.469290700000002,
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256
+    },
+    {
+      "concurrency": 8,
+      "repeats": 3,
+      "throughput_tok_s": 156.18048980398325,
+      "ttft_s": 5.4061146659999935,
+      "itl_s": 0.01405685040784317,
+      "e2e_s": 8.990699088,
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256
+    },
+    {
+      "concurrency": 1,
+      "repeats": 3,
+      "throughput_tok_s": 45.58262534761707,
+      "ttft_s": 1.0640068429999872,
+      "itl_s": 0.013717897354330637,
+      "e2e_s": 2.808023722999991,
+      "workload": "long",
+      "input_tokens": 2048,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 2,
+      "repeats": 3,
+      "throughput_tok_s": 45.44466044206752,
+      "ttft_s": 2.479129723999989,
+      "itl_s": 0.013758347767716648,
+      "e2e_s": 4.226439890500004,
+      "workload": "long",
+      "input_tokens": 2048,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 4,
+      "repeats": 3,
+      "throughput_tok_s": 44.19451680991585,
+      "ttft_s": 5.4946426359999805,
+      "itl_s": 0.013786490334645688,
+      "e2e_s": 7.244627984499999,
+      "workload": "long",
+      "input_tokens": 2048,
+      "output_tokens": 128
+    },
+    {
+      "concurrency": 8,
+      "repeats": 3,
+      "throughput_tok_s": 42.63102982214796,
+      "ttft_s": 11.724228656500031,
+      "itl_s": 0.014024108444881745,
+      "e2e_s": 13.506069479500013,
+      "workload": "long",
+      "input_tokens": 2048,
+      "output_tokens": 128
+    }
+  ],
+  "startup_s": 73.1,
+  "vram_gib": 7.48,
+  "server_args": [
+    "<HOME>/venvs/sglang/bin/python",
+    "-m",
+    "sglang.launch_server",
+    "--model-path",
+    "<HOME>/models/Qwen3-8B-AWQ",
+    "--served-model-name",
+    "qwen3-8b-awq",
+    "--port",
+    "8000",
+    "--host",
+    "127.0.0.1",
+    "--quantization",
+    "awq_marlin",
+    "--context-length",
+    "4096",
+    "--mem-fraction-static",
+    "0.88",
+    "--max-running-requests",
+    "8",
+    "--log-level",
+    "warning",
+    "--disable-radix-cache"
+  ],
+  "server_info": {
+    "max_total_num_tokens": 2554,
+    "max_req_input_len": 2548,
+    "context_length": 4096,
+    "max_running_requests": 8
+  }
+}

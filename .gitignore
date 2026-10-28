@@ -1,0 +1,32 @@
+# 日志：内含本机绝对路径（/home/<user>/...）、进程号与运行堆栈，
+# 对读者无价值且暴露用户名。需要时按 README 复现即可。
+logs/
+
+# Python 缓存与测试产物
+__pycache__/
+*.py[cod]
+.pytest_cache/
+pytest-cache-files-*/
+
+# 本地测试临时目录（单测里用它替代系统 temp）
+.testtmp/
+.demo/
+
+# 审查包：与 results/ + notes/ + README 内容重复，且内嵌日志
+*.zip
+review-pack/
+
+# sanitize_results.py --in-place 产生的备份
+*.bak
+
+# 环境
+.venv/
+venv/
+*.egg-info/
+.env
+
+# 测试/CI 临时产物
+ci.xml
+full.xml
+.nomods/
+.civenv/

@@ -1,0 +1,36 @@
+{
+  "backend": "transformers",
+  "model": "<HOME>/models/Qwen3-8B-AWQ",
+  "startup_s": 8.23,
+  "vram_gib": 5.68,
+  "results": [
+    {
+      "backend": "transformers",
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128,
+      "concurrency": 4,
+      "repeats": 3,
+      "mode": "batch",
+      "throughput_tok_s": 35.859452828702906,
+      "ttft_s": NaN,
+      "itl_s": NaN,
+      "e2e_s": 14.277964653999987,
+      "peak_vram_gib": 5.89
+    },
+    {
+      "backend": "transformers",
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256,
+      "concurrency": 4,
+      "repeats": 3,
+      "mode": "batch",
+      "throughput_tok_s": 37.46104067272106,
+      "ttft_s": NaN,
+      "itl_s": NaN,
+      "e2e_s": 27.33506548699998,
+      "peak_vram_gib": 6.22
+    }
+  ]
+}

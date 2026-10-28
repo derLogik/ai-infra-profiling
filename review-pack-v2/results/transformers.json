@@ -1,0 +1,79 @@
+{
+  "backend": "transformers",
+  "model": "<HOME>/models/Qwen3-8B-AWQ",
+  "startup_s": 9.24,
+  "vram_gib": 5.68,
+  "results": [
+    {
+      "backend": "transformers",
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128,
+      "concurrency": 1,
+      "repeats": 3,
+      "mode": "stream",
+      "throughput_tok_s": 9.786003251646342,
+      "ttft_s": 0.19761412399998335,
+      "itl_s": 0.10143991835937438,
+      "e2e_s": 13.182092492999914,
+      "peak_vram_gib": 5.73
+    },
+    {
+      "backend": "transformers",
+      "workload": "short",
+      "input_tokens": 128,
+      "output_tokens": 128,
+      "concurrency": 4,
+      "repeats": 3,
+      "mode": "batch",
+      "throughput_tok_s": 35.859452828702906,
+      "ttft_s": NaN,
+      "itl_s": NaN,
+      "e2e_s": 14.277964653999987,
+      "peak_vram_gib": 5.89
+    },
+    {
+      "backend": "transformers",
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256,
+      "concurrency": 1,
+      "repeats": 3,
+      "mode": "stream",
+      "throughput_tok_s": 10.5062345681831,
+      "ttft_s": 0.37002213299979303,
+      "itl_s": 0.09412318690624977,
+      "e2e_s": 24.461665911999944,
+      "peak_vram_gib": 5.89
+    },
+    {
+      "backend": "transformers",
+      "workload": "medium",
+      "input_tokens": 512,
+      "output_tokens": 256,
+      "concurrency": 4,
+      "repeats": 3,
+      "mode": "batch",
+      "throughput_tok_s": 37.46104067272106,
+      "ttft_s": NaN,
+      "itl_s": NaN,
+      "e2e_s": 27.33506548699998,
+      "peak_vram_gib": 6.22
+    },
+    {
+      "backend": "transformers",
+      "workload": "long",
+      "input_tokens": 2048,
+      "output_tokens": 128,
+      "concurrency": 1,
+      "repeats": 3,
+      "mode": "stream",
+      "throughput_tok_s": 8.109265588795587,
+      "ttft_s": 1.251984092000157,
+      "itl_s": 0.11524507819531316,
+      "e2e_s": 15.907729077000113,
+      "peak_vram_gib": 6.22
+    }
+  ],
+  "note": "batch>1 rows are static batching (mode=batch): no per-token timing, throughput only"
+}

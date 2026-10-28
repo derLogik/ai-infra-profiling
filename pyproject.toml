@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-infra-profiling"
+version = "0.2.0"
+description = "Qwen3-8B-AWQ on an 8 GB card: three-runtime benchmark and KV cache analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+# 运行时只依赖 httpx：压测客户端用它发流式请求。
+# 其余脚本的依赖按用途分到下面的可选组，避免"装个依赖要拉 2 GB torch"。
+dependencies = ["httpx>=0.27"]
+
+[project.optional-dependencies]
+# 复现 transformers 基线才需要（体积很大，通常只在有 GPU 的机器上装）
+hf = ["torch>=2.1", "transformers>=4.40"]
+# 只跑测试：全部 67 项都是 CPU 测试，不需要 GPU、不需要 torch
+test = ["pytest>=8.0", "httpx>=0.27"]
+
+[tool.setuptools]
+packages = []
+
+[tool.pytest.ini_options]
+testpaths = ["bench"]
+# 不加 --strict-markers 之类会挡住老 pytest 的选项
+addopts = "-q"
